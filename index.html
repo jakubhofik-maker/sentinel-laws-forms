@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentinel Laws — Formuláře</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="portal">
+  <header class="portal-header">
+    <div class="portal-brand">
+      <img class="portal-logo" src="sentinel-laws-logo.png" alt="Sentinel Laws">
+      <div class="portal-brand-text">
+        <h1>Sentinel Laws</h1>
+        <p>Advokátní kancelář</p>
+      </div>
+    </div>
+
+    <div class="portal-attorney">
+      <label for="attorney-leo">Advokát</label>
+      <div class="attorney-options">
+        <label class="attorney-option">
+          <input type="radio" name="attorney" id="attorney-leo" value="leo-foster">
+          <span>Leo Foster</span>
+        </label>
+        <label class="attorney-option">
+          <input type="radio" name="attorney" id="attorney-matteo" value="matteo-ricci">
+          <span>Matteo Ricci</span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main class="portal-main">
+    <div class="category-list">
+      <div class="category">
+        <button type="button" class="category-toggle" aria-expanded="false" aria-controls="category-name-change">
+          <span class="category-title">Změna jmen</span>
+          <span class="category-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="category-panel" id="category-name-change" hidden>
+          <p>Formuláře pro podání žádosti o změnu jména u Okresního soudu státu San Andreas.</p>
+          <div class="form-grid">
+            <a class="form-card" href="nc100.html">
+              <span class="form-code">NC-100</span>
+              <strong>Petice o změnu jména</strong>
+              <span>Hlavní žádost podávaná u soudu. Obsahuje údaje navrhovatele, požadovanou změnu jména a podpisy.</span>
+            </a>
+
+            <a class="form-card" href="nc110.html">
+              <span class="form-code">NC-110</span>
+              <strong>Příloha — údaje o osobě</strong>
+              <span>Detailní informace o osobě, jejíž jméno se mění, včetně výpisu z trestního rejstříku.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <button type="button" class="category-toggle" aria-expanded="false" aria-controls="category-divorce">
+          <span class="category-title">Rozvod</span>
+          <span class="category-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="category-panel" id="category-divorce" hidden>
+          <p>Dohody o rozvodu manželství a vypořádání poměrů pro Okresní soud státu San Andreas.</p>
+          <div class="form-grid">
+            <a class="form-card" href="divorce.html">
+              <span class="form-code">ROZVOD</span>
+              <strong>Dohoda o rozvodu manželství</strong>
+              <span>Kompletní dohoda manželů včetně péče o děti, majetku, výživného a podpisů u soudu.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="category disabled">
+        <button type="button" class="category-toggle" disabled aria-expanded="false">
+          <span class="category-title">Department of Justice</span>
+          <span class="coming-soon-badge">Brzy</span>
+        </button>
+      </div>
+    </div>
+  </main>
+  <footer class="portal-footer">
+    Sentinel Laws · Court of Justice · State of San Andreas
+  </footer>
+
+  <script src="portal.js"></script>
+</body>
+</html>

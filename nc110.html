@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NC-110 — Příloha k petici o změnu jména</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="toolbar no-print">
+    <a href="index.html">← Přehled formulářů</a>
+    <span>NC-110 Příloha — údaje o osobě</span>
+    <button type="button" id="print-btn">Uložit jako PDF / Tisk</button>
+    <button type="button" class="secondary" onclick="location.href='nc100.html'">Otevřít NC-100</button>
+  </div>
+
+  <main class="page">
+    <div class="form-id">Formulář NC-110</div>
+
+    <header class="doc-header">
+      <div>
+        <h1 class="doc-title">Údaje o osobě, jejíž jméno se mění</h1>
+        <p class="doc-subtitle">Name and Information About the Person Whose Name Is to Be Changed</p>
+      </div>
+      <img class="logo" src="sentinel-laws-logo.png" alt="Sentinel Laws">
+    </header>
+
+    <p class="firm-line">Advokátní kancelář Sentinel Laws</p>
+
+    <div class="court-block">
+      <strong>Příloha k petici NC-100</strong>
+      <span>Okresní soud státu San Andreas — Los Santos</span>
+    </div>
+
+    <p class="section-title">1. Identifikace osoby</p>
+
+    <div class="checkbox-row">
+      <label><input type="radio" name="who" value="self" checked> Jde o mě (navrhovatel sám/sama)</label>
+      <label><input type="radio" name="who" value="other"> Jde o jinou osobu</label>
+    </div>
+
+    <div class="field-row">
+      <label for="current-legal-name">Současné jméno:</label>
+      <input type="text" id="current-legal-name">
+    </div>
+    <div class="field-row">
+      <label for="proposed-legal-name">Navrhované jméno:</label>
+      <input type="text" id="proposed-legal-name">
+    </div>
+    <div class="field-row">
+      <label for="birth-date">Datum narození:</label>
+      <input type="date" id="birth-date">
+    </div>
+    <div class="field-row">
+      <label for="birth-place">Místo narození:</label>
+      <input type="text" id="birth-place">
+    </div>
+    <div class="field-row">
+      <label for="sex">Pohlaví dle rodného listu:</label>
+      <select id="sex">
+        <option value="">— vyberte —</option>
+        <option value="Muž">Muž</option>
+        <option value="Žena">Žena</option>
+        <option value="Neuvedeno / X">Neuvedeno / X</option>
+      </select>
+    </div>
+    <div class="field-row">
+      <label for="residence-city">Město:</label>
+      <input type="text" id="residence-city" value="Los Santos">
+    </div>
+
+    <p class="section-title">2. Důvod změny jména</p>
+    <div class="field-row wide">
+      <label for="reason">Stručné vysvětlení:</label>
+      <textarea id="reason"></textarea>
+    </div>
+
+    <p class="section-title">3. Vztah navrhovatele k osobě</p>
+    <div class="checkbox-row">
+      <label><input type="radio" name="relation" value="self" checked> sám/sama</label>
+      <label><input type="radio" name="relation" value="parent"> rodič</label>
+      <label><input type="radio" name="relation" value="guardian"> opatrovník</label>
+      <label><input type="radio" name="relation" value="other"> jiný vztah</label>
+    </div>
+    <div class="field-row">
+      <label for="relation-detail">Upřesnění vztahu:</label>
+      <input type="text" id="relation-detail">
+    </div>
+
+    <p class="section-title">4. Prohlášení o trestní minulosti</p>
+    <p>
+      Osoba, jejíž jméno se mění, prohlašuje, že k datu podání této petice nemá nevyřízené trestní
+      řízení, které by bránilo změně jména, a že přiložený <strong>výpis z trestního rejstříku</strong>
+      odpovídá skutečnosti.
+    </p>
+
+    <div class="attachment-box">
+      <h3>Příloha: Výpis z trestního rejstříku</h3>
+      <div class="field-row">
+        <label for="cr-date">Datum vydání výpisu:</label>
+        <input type="date" id="cr-date">
+      </div>
+      <div class="field-row">
+        <label for="cr-issuer">Vydal:</label>
+        <input type="text" id="cr-issuer" value="Department of Justice, State of San Andreas">
+      </div>
+      <div class="field-row">
+        <label for="cr-result">Výsledek:</label>
+        <input type="text" id="cr-result" value="Bez záznamu / No record found">
+      </div>
+      <div class="field-row wide">
+        <label for="cr-notes">Poznámka:</label>
+        <textarea id="cr-notes"></textarea>
+      </div>
+      <p class="note">Tato příloha se vždy přikládá ke každé dospělé osobě uvedené v petici NC-100.</p>
+    </div>
+
+    <p class="section-title center">5. Prohlášení pod hrozbou trestu za křivou přísahu</p>
+    <p>
+      Prohlašuji, že všechny údaje v tomto formuláři a v přiloženém výpisu z trestního rejstříku jsou
+      pravdivé a správné. Jsem si vědom(a) následků v případě nepravdivého prohlášení.
+    </p>
+
+    <div class="field-row">
+      <label for="declaration-date">Datum:</label>
+      <input type="date" id="declaration-date">
+    </div>
+    <div class="field-row">
+      <label for="declaration-place">Místo:</label>
+      <input type="text" id="declaration-place" value="Los Santos, San Andreas">
+    </div>
+
+    <p style="margin-top:18px;text-align:center;">
+      V <span id="place-display">Los Santos, San Andreas</span>, dne <span id="date-display">………………</span>
+    </p>
+
+    <div class="signature-grid">
+      <div class="signature-block">
+        <div class="signature-script" id="sig-person"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-person" style="text-align:center;border:none;">
+          <div>(Osoba, jejíž jméno se mění)</div>
+        </div>
+      </div>
+
+      <div class="signature-block">
+        <div class="signature-script" id="sig-petitioner"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-petitioner" style="text-align:center;border:none;">
+          <div>(Navrhovatel)</div>
+        </div>
+      </div>
+
+      <div class="signature-block full">
+        <div class="signature-script" id="sig-attorney"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-attorney" value="" style="text-align:center;border:none;">
+          <div>Advokát — Sentinel Laws</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+  <script src="portal.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      bindAllSignatures([
+        ['sig-name-person', 'sig-person'],
+        ['sig-name-petitioner', 'sig-petitioner'],
+        ['sig-name-attorney', 'sig-attorney']
+      ]);
+
+      bindDateDisplay('declaration-date', 'date-display');
+
+      const placeInput = document.getElementById('declaration-place');
+      const placeDisplay = document.getElementById('place-display');
+      if (placeInput && placeDisplay) {
+        const syncPlace = () => { placeDisplay.textContent = placeInput.value || '………………'; };
+        placeInput.addEventListener('input', syncPlace);
+        syncPlace();
+      }
+
+      const currentName = document.getElementById('current-legal-name');
+      const sigNamePerson = document.getElementById('sig-name-person');
+      if (currentName && sigNamePerson) {
+        currentName.addEventListener('input', () => {
+          if (!sigNamePerson.dataset.manual) {
+            sigNamePerson.value = currentName.value;
+            updateSignature(sigNamePerson, 'sig-person');
+          }
+        });
+      }
+
+      if (sigNamePerson) {
+        sigNamePerson.addEventListener('input', () => {
+          sigNamePerson.dataset.manual = sigNamePerson.value ? '1' : '';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

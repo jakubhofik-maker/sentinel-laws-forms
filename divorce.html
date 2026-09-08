@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dohoda o rozvodu manželství</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="toolbar no-print">
+    <a href="index.html">← Přehled formulářů</a>
+    <span>Dohoda o rozvodu manželství</span>
+    <button type="button" id="print-btn">Uložit jako PDF / Tisk</button>
+  </div>
+
+  <!-- Strana 1 -->
+  <main class="page">
+    <header class="doc-header">
+      <div>
+        <h1 class="doc-title">Dohoda o rozvodu manželství a vyrovnání poměrů</h1>
+      </div>
+      <img class="logo" src="sentinel-laws-logo.png" alt="Sentinel Laws">
+    </header>
+
+    <p class="firm-line">Advokátní kancelář Sentinel Laws</p>
+
+    <p class="section-title">Smluvní strany</p>
+
+    <p><strong>Manželka:</strong>
+      <input type="text" id="wife-name" class="inline-field wide">
+      , rozená
+      <input type="text" id="wife-maiden" class="inline-field">
+    </p>
+    <div class="field-row">
+      <label for="wife-dob">Datum narození:</label>
+      <input type="date" id="wife-dob">
+    </div>
+    <div class="field-row">
+      <label for="wife-city">Město:</label>
+      <input type="text" id="wife-city" value="Los Santos">
+    </div>
+    <p class="note-inline">(dále jen „Manželka“)</p>
+
+    <p style="margin-top:14px;"><strong>Manžel:</strong>
+      <input type="text" id="husband-name" class="inline-field wide">
+    </p>
+    <div class="field-row">
+      <label for="husband-dob">Datum narození:</label>
+      <input type="date" id="husband-dob">
+    </div>
+    <div class="field-row">
+      <label for="husband-city">Město:</label>
+      <input type="text" id="husband-city" value="Los Santos">
+    </div>
+    <p class="note-inline">(dále jen „Manžel“)</p>
+
+    <p class="rep-note">
+      (Právní zastoupení zajišťuje Advokátní kancelář Sentinel Laws — <span id="attorney-rep-name">Leo Foster</span>)
+    </p>
+
+    <p class="section-title center">I. Prohlášení o manželství a důvodech rozvodu</p>
+
+    <ul class="legal-list">
+      <li>
+        Smluvní strany uzavřely manželství dne
+        <input type="date" id="marriage-date" class="inline-field">
+        ve státu San Andreas.
+      </li>
+      <li>
+        <strong>Důvod rozvodu:</strong>
+        <textarea id="divorce-reason" class="block-field">Manželé se odcizili v důsledku vysoké pracovní zátěže a ztráty vzájemné priority ve vztahu, což vedlo k neodstranitelným sporům. Obě strany souhlasí s ukončením manželství.</textarea>
+      </li>
+      <li>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="has-children" checked>
+          Z manželství pocházejí nezletilé děti
+        </label>
+        <div id="children-fields">
+          <input type="text" id="child-name" class="inline-field wide">
+          , nar.
+          <input type="date" id="child-dob" class="inline-field">
+        </div>
+      </li>
+    </ul>
+
+    <div id="child-section">
+      <p class="section-title center">II. Úprava poměrů k nezletilému dítěti</p>
+
+      <textarea id="section2-intro" class="block-field">S ohledem na věk nezletilého dítěte a jeho schopnost formulovat vlastní přání se strany dohodly na následujícím:</textarea>
+
+      <ul class="legal-list section-editable">
+        <li>
+          <div class="field-row no-print-gap">
+            <label for="care-type">Typ péče:</label>
+            <select id="care-type">
+              <option value="alternating">Střídavá péče</option>
+              <option value="sole">Péče jednho rodiče (vlastní péče)</option>
+              <option value="exclusive">Vylučná péče</option>
+            </select>
+          </div>
+          <div class="field-row no-print-gap" id="care-parent-row" hidden>
+            <label for="care-parent">Péči vykonává:</label>
+            <select id="care-parent">
+              <option value="wife">Manželka</option>
+              <option value="husband">Manžel</option>
+            </select>
+          </div>
+          <strong id="care-label">Střídavá péče:</strong>
+          <textarea id="section2-care" class="block-field">Nezletilé dítě je svěřeno do střídavé péče obou rodičů. Strany se dohodly na flexibilním režimu styku dle vzájemné dohody a přání dítěte.</textarea>
+        </li>
+        <li>
+          <strong>Výživné:</strong>
+          <textarea id="section2-support" class="block-field">Vzhledem ke společné flexibilní péči nevyplácí žádný z rodičů druhému rodiči přímé měsíční výživné.</textarea>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Strana 2 -->
+  <main class="page page-break">
+    <p class="section-title center">III. Vypořádání majetku, závazků a financí</p>
+
+    <textarea id="section3-intro" class="block-field">Manželé prohlašují, že během manželství nenabyli nemovitosti, společné bankovní účty ani vozidla podléhající rozdělení.</textarea>
+
+    <ul class="legal-list section-editable">
+      <li>
+        <strong>Nemovitosti a vozidla:</strong>
+        <textarea id="section3-property" class="block-field">Žádná nemovitost ani vozidlo není předmětem vypořádání. Každý manžel si ponechává majetek ve své výlučné dispozici / vlastnictví.</textarea>
+      </li>
+      <li>
+        <strong>Bankovní účty a finance:</strong>
+        <textarea id="section3-finance" class="block-field">Manželé nevlastní společný účet. Prostředky na soukromých účtech zůstávají výlučným majetkem majitele účtu.</textarea>
+      </li>
+      <li>
+        <strong>Vypořádání nákladů na svatbu:</strong>
+        <textarea id="section3-wedding" class="block-field">Náklady na obřad a hostinu ve výši $5 000 000 USD hradila rodina Manžela. Manželka souhlasí s úhradou jednorázového finančního vypořádání ve výši $5 000 000 USD ve prospěch Manžela. Tato částka musí být uhrazena na účet Manžela nejpozději do 7 dnů od podpisu této dohody.</textarea>
+      </li>
+    </ul>
+
+    <p class="section-title center">IV. Výživné pro manželku / manžela</p>
+
+    <ul class="legal-list section-editable">
+      <li>
+        <textarea id="section4-alimony" class="block-field">Obě strany se vzájemně a výslovně vzdávají práva na jakékoli výživné pro rozvedeného manžela / rozvedenou manželku.</textarea>
+      </li>
+    </ul>
+
+    <p class="section-title center">V. Závěrečná ujednání</p>
+
+    <ul class="legal-list">
+      <li>
+        Tato dohoda představuje úplné vypořádání veškerých práv a povinností manželů.
+      </li>
+      <li>
+        Dohoda je platná dnem podpisu a nabývá účinnosti schválením příslušným soudem státu San Andreas.
+      </li>
+    </ul>
+
+    <div class="field-row">
+      <label for="sign-date">Datum podpisu:</label>
+      <input type="date" id="sign-date">
+    </div>
+    <div class="field-row">
+      <label for="sign-place">Místo:</label>
+      <input type="text" id="sign-place" value="Los Santos, San Andreas">
+    </div>
+
+    <p style="margin-top:18px;text-align:center;">
+      V <span id="place-display">Los Santos, San Andreas</span>, dne <span id="date-display">………………</span>
+    </p>
+
+    <p class="party-names">
+      <span id="wife-name-display">………………</span> (Manželka)<br>
+      <span id="husband-name-display">………………</span> (Manžel)
+    </p>
+
+    <div class="signature-grid">
+      <div class="signature-block">
+        <div class="signature-script" id="sig-wife"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-wife" style="text-align:center;border:none;">
+          <div>(Manželka)</div>
+        </div>
+      </div>
+
+      <div class="signature-block">
+        <div class="signature-script" id="sig-husband"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-husband" style="text-align:center;border:none;">
+          <div>(Manžel)</div>
+        </div>
+      </div>
+
+      <div class="signature-block full">
+        <div class="signature-script" id="sig-attorney"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-attorney" value="" style="text-align:center;border:none;">
+          <div>Sentinel Laws v zastoupení <span id="attorney-sig-label"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-row">
+      <img class="seal" src="court-seal.png" alt="Superior Court of San Andreas">
+
+      <div class="judge-block">
+        <div class="signature-script" id="sig-judge"></div>
+        <div>
+          Hon. Judge
+          <input type="text" id="judge-name" value="David Vance" class="inline-name">
+        </div>
+        <div>Presiding Judge, District Court</div>
+        <div>State of San Andreas</div>
+        <div style="margin-top:8px;">V Los Santos dne <span id="court-date-display">………………</span></div>
+        <input type="date" id="court-date" class="no-print court-date-input">
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="portal.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      bindAllSignatures([
+        ['sig-name-wife', 'sig-wife'],
+        ['sig-name-husband', 'sig-husband'],
+        ['sig-name-attorney', 'sig-attorney'],
+        ['judge-name', 'sig-judge']
+      ]);
+
+      bindDateDisplay('sign-date', 'date-display');
+      bindDateDisplay('court-date', 'court-date-display');
+
+      const syncPlace = () => {
+        const el = document.getElementById('sign-place');
+        const display = document.getElementById('place-display');
+        if (el && display) display.textContent = el.value || '………………';
+      };
+      document.getElementById('sign-place')?.addEventListener('input', syncPlace);
+      syncPlace();
+
+      const hasChildren = document.getElementById('has-children');
+      const childrenFields = document.getElementById('children-fields');
+      const childSection = document.getElementById('child-section');
+
+      function toggleChildren() {
+        const show = hasChildren.checked;
+        childrenFields.style.display = show ? 'block' : 'none';
+        if (childSection) childSection.style.display = show ? 'block' : 'none';
+      }
+
+      hasChildren.addEventListener('change', toggleChildren);
+      toggleChildren();
+
+      function syncPartyName(sourceId, sigInputId, sigTargetId, displayId) {
+        const source = document.getElementById(sourceId);
+        const sig = document.getElementById(sigInputId);
+        const display = document.getElementById(displayId);
+        if (!source || !sig) return;
+
+        const update = () => {
+          if (!sig.dataset.manual) {
+            sig.value = source.value;
+            updateSignature(sig, sigTargetId);
+          }
+          if (display) display.textContent = source.value || '………………';
+        };
+
+        source.addEventListener('input', update);
+        sig.addEventListener('input', () => {
+          sig.dataset.manual = sig.value ? '1' : '';
+        });
+        update();
+      }
+
+      syncPartyName('wife-name', 'sig-name-wife', 'sig-wife', 'wife-name-display');
+      syncPartyName('husband-name', 'sig-name-husband', 'sig-husband', 'husband-name-display');
+
+      const careType = document.getElementById('care-type');
+      const careParent = document.getElementById('care-parent');
+      const careParentRow = document.getElementById('care-parent-row');
+      const careLabel = document.getElementById('care-label');
+      const section2Care = document.getElementById('section2-care');
+
+      const carePresets = {
+        alternating: {
+          label: 'Střídavá péče:',
+          text: 'Nezletilé dítě je svěřeno do střídavé péče obou rodičů. Strany se dohodly na flexibilním režimu styku dle vzájemné dohody a přání dítěte.'
+        },
+        sole: {
+          label: 'Péče jednho rodiče:',
+          text: (parent) => `Nezletilé dítě je svěřeno do péče ${parent}. Druhý rodič má právo na styk s dítětem v rozsahu a způsobem, na kterém se strany dohodnou.`
+        },
+        exclusive: {
+          label: 'Vylučná péče:',
+          text: (parent) => `Nezletilé dítě je svěřeno do výlučné péče ${parent}. Druhý rodič nemá právo na styk s dítětem, pokud se strany písemně nedohodnou jinak.`
+        }
+      };
+
+      function getCareParentLabel() {
+        return careParent.value === 'husband' ? 'Manžela' : 'Manželky';
+      }
+
+      function applyCarePreset() {
+        if (!careType || !section2Care) return;
+        if (section2Care.dataset.manual === '1') return;
+
+        const preset = carePresets[careType.value];
+        if (!preset) return;
+
+        if (careLabel) careLabel.textContent = preset.label;
+
+        if (careType.value === 'alternating') {
+          section2Care.value = preset.text;
+          if (careParentRow) careParentRow.hidden = true;
+        } else {
+          section2Care.value = preset.text(getCareParentLabel());
+          if (careParentRow) careParentRow.hidden = false;
+        }
+      }
+
+      careType?.addEventListener('change', () => {
+        section2Care.dataset.manual = '';
+        applyCarePreset();
+      });
+
+      careParent?.addEventListener('change', () => {
+        if (careType.value !== 'alternating') {
+          section2Care.dataset.manual = '';
+          applyCarePreset();
+        }
+      });
+
+      section2Care?.addEventListener('input', () => {
+        section2Care.dataset.manual = section2Care.value ? '1' : '';
+      });
+
+      applyCarePreset();
+
+      function updateAttorneyLabels() {
+        const attorney = getSelectedAttorney();
+        const rep = document.getElementById('attorney-rep-name');
+        const label = document.getElementById('attorney-sig-label');
+        if (rep) rep.textContent = attorney.name;
+        if (label) label.textContent = attorney.name;
+      }
+
+      updateAttorneyLabels();
+      document.addEventListener('attorney-changed', updateAttorneyLabels);
+    });
+  </script>
+</body>
+</html>
