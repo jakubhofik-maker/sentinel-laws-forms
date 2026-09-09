@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sentinel Laws — Formuláře</title>
-  <link rel="stylesheet" href="portal.css">
+  <link rel="stylesheet" href="portal.css?v=3">
 </head>
 <body class="portal">
   <header class="portal-header">
@@ -55,7 +55,7 @@
 
     <section class="authority-block">
       <button type="button" class="authority-toggle" aria-expanded="false" aria-controls="authority-coj">
-        <img class="authority-logo" src="court-seal.png" alt="">
+        <img class="authority-logo" src="court-seal.png" width="78" height="78" alt="">
         <div class="authority-copy">
           <p class="authority-kicker">Podání u soudu</p>
           <h2>Court of Justice</h2>
@@ -104,13 +104,62 @@
               </div>
             </div>
           </div>
+
+          <div class="category">
+            <button type="button" class="category-toggle" aria-expanded="false" aria-controls="category-bail">
+              <span class="category-title">Kauce</span>
+              <span class="category-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="category-panel" id="category-bail" hidden>
+              <p>Návrhy na propuštění obviněného na kauci a na stanovení její výše u Okresního soudu státu San Andreas.</p>
+              <div class="form-grid">
+                <a class="form-card" href="ka100.html">
+                  <span class="form-code">KA-100</span>
+                  <strong>Návrh na propuštění na kauci</strong>
+                  <span>Žádost o stanovení kauce podle Penal Code, včetně výpisu všech obvinění vedených proti osobě.</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="authority-block">
+      <button type="button" class="authority-toggle" aria-expanded="false" aria-controls="authority-iaa">
+        <span class="authority-mark">IAA</span>
+        <div class="authority-copy">
+          <p class="authority-kicker">Podání u sboru</p>
+          <h2>Chief of Police · IAA</h2>
+          <p>Internal Affairs Agency — stížnosti na příslušníky</p>
+        </div>
+        <span class="category-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="authority-panel" id="authority-iaa" hidden>
+        <div class="category-list">
+          <div class="category">
+            <button type="button" class="category-toggle" aria-expanded="false" aria-controls="category-complaint">
+              <span class="category-title">Stížnost na příslušníka</span>
+              <span class="category-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="category-panel" id="category-complaint" hidden>
+              <p>Stížnost na jednání příslušníka podávaná Chief of Police nebo Internal Affairs Agency. Nespadá pod Department of Justice.</p>
+              <div class="form-grid">
+                <a class="form-card" href="st100.html">
+                  <span class="form-code">ST-100</span>
+                  <strong>Stížnost na příslušníka</strong>
+                  <span>Údaje o sboru a odznaku, poškozená osoba, popis události a porušené paragrafy.</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="authority-block coming-soon">
       <button type="button" class="authority-toggle" aria-expanded="false" aria-controls="authority-doj">
-        <img class="authority-logo" src="doj-logo.png" alt="">
+        <img class="authority-logo" src="doj-logo.png" width="78" height="78" alt="">
         <div class="authority-copy">
           <p class="authority-kicker">Podání u úřadu</p>
           <h2>Department of Justice <span class="coming-soon-badge">Brzy</span></h2>
@@ -125,9 +174,9 @@
   </main>
 
   <footer class="portal-footer">
-    Sentinel Laws · Court of Justice · Department of Justice
+    Sentinel Laws · Court of Justice · Chief of Police · IAA
   </footer>
 
-  <script src="portal.js"></script>
+  <script src="portal.js?v=3"></script>
 </body>
 </html>

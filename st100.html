@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ST-100 — Stížnost na příslušníka</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="toolbar no-print">
+    <a href="index.html">← Přehled formulářů</a>
+    <span>ST-100 Stížnost na příslušníka</span>
+    <button type="button" id="print-btn">Uložit jako PDF / Tisk</button>
+  </div>
+
+  <main class="page">
+    <div class="form-id">Formulář ST-100</div>
+
+    <header class="doc-header">
+      <div>
+        <h1 class="doc-title">Stížnost na příslušníka</h1>
+        <p class="doc-subtitle">Complaint Against a Peace Officer</p>
+      </div>
+      <img class="logo" src="sentinel-laws-logo.png" alt="Sentinel Laws">
+    </header>
+
+    <p class="firm-line">Advokátní kancelář Sentinel Laws</p>
+
+    <div class="court-block">
+      <strong>Stížnost podávaná u <span id="addressee-display">Chief of Police</span></strong>
+      <span>Internal Affairs / Police Command — State of San Andreas</span>
+    </div>
+
+    <p class="section-title">I. Adresát stížnosti</p>
+
+    <p>Stížnost se podává (lze označit obojí):</p>
+    <div class="checkbox-row">
+      <label><input type="checkbox" id="to-chief" checked> Chief of Police</label>
+      <label><input type="checkbox" id="to-iaa"> Internal Affairs Agency (IAA)</label>
+    </div>
+    <p class="note">
+      Tento dokument není podáním u Department of Justice. Směřuje velení sboru
+      a / nebo Internal Affairs Agency k šetření jednání příslušníka.
+    </p>
+
+    <p class="section-title">II. Poškozená osoba</p>
+
+    <div class="field-row">
+      <label for="complainant-name">Celé jméno:</label>
+      <input type="text" id="complainant-name">
+    </div>
+    <div class="field-row">
+      <label for="complainant-dob">Datum narození:</label>
+      <input type="date" id="complainant-dob">
+    </div>
+    <div class="field-row">
+      <label for="complainant-address">Adresa / bydliště:</label>
+      <input type="text" id="complainant-address">
+    </div>
+    <div class="field-row">
+      <label for="complainant-phone">Telefon:</label>
+      <input type="text" id="complainant-phone">
+    </div>
+
+    <p class="section-title">III. Příslušník, proti němuž stížnost směřuje</p>
+
+    <div class="field-row">
+      <label for="officer-agency">Sbor:</label>
+      <select id="officer-agency">
+        <option value="Los Santos Police Department">Los Santos Police Department</option>
+        <option value="Los Santos Sheriff Department">Los Santos Sheriff Department</option>
+        <option value="Blaine County Sheriff's Office">Blaine County Sheriff's Office</option>
+        <option value="San Andreas State Police">San Andreas State Police</option>
+        <option value="San Andreas Park Rangers">San Andreas Park Rangers</option>
+        <option value="FIB">FIB</option>
+        <option value="Jiný">Jiný</option>
+      </select>
+    </div>
+    <div class="field-row" id="agency-other-row" hidden>
+      <label for="officer-agency-other">Jiný sbor:</label>
+      <input type="text" id="officer-agency-other">
+    </div>
+    <div class="field-row">
+      <label for="officer-badge">B.N. (číslo odznaku):</label>
+      <input type="text" id="officer-badge">
+    </div>
+    <div class="field-row">
+      <label for="officer-name">Jméno příslušníka:</label>
+      <input type="text" id="officer-name">
+    </div>
+    <div class="field-row">
+      <label for="officer-rank">Hodnost:</label>
+      <input type="text" id="officer-rank">
+    </div>
+    <div class="field-row wide">
+      <label for="officer-others">Další zúčastnění příslušníci:</label>
+      <input type="text" id="officer-others">
+    </div>
+
+    <p class="section-title">IV. Zastoupení</p>
+
+    <div class="field-row">
+      <label for="petitioner-attorney">Zastoupen advokátem:</label>
+      <input type="text" id="petitioner-attorney" value="">
+    </div>
+    <p class="rep-note">
+      Stížnost podává Advokátní kancelář Sentinel Laws, jednající prostřednictvím
+      advokáta <span id="attorney-rep-name">Leo Foster</span>, v zastoupení poškozené osoby.
+    </p>
+  </main>
+
+  <main class="page page-break">
+    <p class="section-title">V. Popis události</p>
+
+    <div class="field-row">
+      <label for="incident-date">Datum události:</label>
+      <input type="date" id="incident-date">
+    </div>
+    <div class="field-row">
+      <label for="incident-time">Čas:</label>
+      <input type="text" id="incident-time">
+    </div>
+    <div class="field-row">
+      <label for="incident-place">Místo:</label>
+      <input type="text" id="incident-place">
+    </div>
+    <div class="field-row wide">
+      <label for="incident-desc">Popis průběhu:</label>
+      <textarea id="incident-desc" class="event-field"></textarea>
+    </div>
+
+    <p class="section-title">VI. Porušená ustanovení</p>
+
+    <p>
+      Poškozená osoba tvrdí, že jednáním příslušníka byla porušena následující
+      ustanovení Penal Code of the State of San Andreas:
+    </p>
+
+    <table class="charge-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ustanovení PC</th>
+          <th>Popis porušení</th>
+          <th>Klasifikace</th>
+          <th class="no-print"></th>
+        </tr>
+      </thead>
+      <tbody id="charge-body"></tbody>
+    </table>
+    <button type="button" class="add-row-btn no-print" id="add-charge">+ Přidat ustanovení</button>
+
+    <p class="section-title center">VII. Žádost</p>
+
+    <p>
+      Poškozená osoba žádá, aby adresát tuto stížnost přijal, věc prošetřil
+      a přijal opatření přiměřená závažnosti jednání, včetně kárného postihu
+      a vyrozumění stěžovatele o výsledku šetření.
+    </p>
+
+    <div class="field-row">
+      <label for="sign-date">Datum podání:</label>
+      <input type="date" id="sign-date">
+    </div>
+    <div class="field-row">
+      <label for="sign-place">Místo:</label>
+      <input type="text" id="sign-place" value="Los Santos, San Andreas">
+    </div>
+
+    <p style="margin-top:18px;text-align:center;">
+      V <span id="place-display">Los Santos, San Andreas</span>, dne <span id="date-display">………………</span>
+    </p>
+
+    <div class="signature-grid">
+      <div class="signature-block">
+        <div class="signature-script" id="sig-complainant"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-complainant" style="text-align:center;border:none;">
+          <div>(Poškozená osoba)</div>
+        </div>
+      </div>
+
+      <div class="signature-block">
+        <div class="signature-script" id="sig-attorney"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-attorney" value="" style="text-align:center;border:none;">
+          <div>Advokát — Sentinel Laws</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="portal.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      bindAllSignatures([
+        ['sig-name-complainant', 'sig-complainant'],
+        ['sig-name-attorney', 'sig-attorney']
+      ]);
+
+      bindDateDisplay('sign-date', 'date-display');
+
+      const placeInput = document.getElementById('sign-place');
+      const placeDisplay = document.getElementById('place-display');
+      if (placeInput && placeDisplay) {
+        const syncPlace = () => { placeDisplay.textContent = placeInput.value || '………………'; };
+        placeInput.addEventListener('input', syncPlace);
+        syncPlace();
+      }
+
+      const complainantName = document.getElementById('complainant-name');
+      const sigNameComplainant = document.getElementById('sig-name-complainant');
+      if (complainantName && sigNameComplainant) {
+        complainantName.addEventListener('input', () => {
+          if (!sigNameComplainant.dataset.manual) {
+            sigNameComplainant.value = complainantName.value;
+            updateSignature(sigNameComplainant, 'sig-complainant');
+          }
+        });
+      }
+
+      if (sigNameComplainant) {
+        sigNameComplainant.addEventListener('input', () => {
+          sigNameComplainant.dataset.manual = sigNameComplainant.value ? '1' : '';
+        });
+      }
+
+      function updateAttorneyLabels() {
+        const attorney = getSelectedAttorney();
+        const rep = document.getElementById('attorney-rep-name');
+        if (rep) rep.textContent = attorney.name;
+      }
+
+      updateAttorneyLabels();
+      document.addEventListener('attorney-changed', updateAttorneyLabels);
+
+      const toChief = document.getElementById('to-chief');
+      const toIaa = document.getElementById('to-iaa');
+      const addresseeDisplay = document.getElementById('addressee-display');
+
+      function updateAddressee() {
+        const parts = [];
+        if (toChief.checked) parts.push('Chief of Police');
+        if (toIaa.checked) parts.push('Internal Affairs Agency (IAA)');
+        addresseeDisplay.textContent = parts.join(' a ') || '………………';
+      }
+
+      toChief.addEventListener('change', updateAddressee);
+      toIaa.addEventListener('change', updateAddressee);
+      updateAddressee();
+
+      const agencySelect = document.getElementById('officer-agency');
+      const agencyOtherRow = document.getElementById('agency-other-row');
+      agencySelect.addEventListener('change', () => {
+        agencyOtherRow.hidden = agencySelect.value !== 'Jiný';
+      });
+
+      const chargeBody = document.getElementById('charge-body');
+
+      function renumberCharges() {
+        [...chargeBody.querySelectorAll('.charge-row')].forEach((row, index) => {
+          row.querySelector('.charge-num').textContent = String(index + 1);
+        });
+      }
+
+      function addChargeRow() {
+        const row = document.createElement('tr');
+        row.className = 'charge-row';
+        row.innerHTML = `
+          <td class="charge-num"></td>
+          <td class="charge-pc"><input type="text" aria-label="Ustanovení PC" placeholder="např. PC 149"></td>
+          <td><input type="text" aria-label="Popis porušení"></td>
+          <td class="charge-class">
+            <select aria-label="Klasifikace">
+              <option value="Felony">Felony</option>
+              <option value="Misdemeanor">Misdemeanor</option>
+              <option value="Infraction">Infraction</option>
+            </select>
+          </td>
+          <td class="charge-remove">
+            <button type="button" class="remove-charge no-print" aria-label="Odebrat ustanovení">×</button>
+          </td>
+        `;
+        chargeBody.appendChild(row);
+        renumberCharges();
+      }
+
+      chargeBody.addEventListener('click', (event) => {
+        const button = event.target.closest('.remove-charge');
+        if (!button) return;
+        if (chargeBody.querySelectorAll('.charge-row').length <= 1) return;
+        button.closest('.charge-row').remove();
+        renumberCharges();
+      });
+
+      document.getElementById('add-charge').addEventListener('click', addChargeRow);
+      addChargeRow();
+    });
+  </script>
+</body>
+</html>

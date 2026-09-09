@@ -151,6 +151,10 @@ body {
   align-items: baseline;
 }
 
+.field-row[hidden] {
+  display: none;
+}
+
 .field-row label {
   font-weight: 600;
 }
@@ -176,6 +180,10 @@ select {
 textarea {
   min-height: 56px;
   resize: vertical;
+}
+
+textarea.event-field {
+  min-height: 140px;
 }
 
 input:focus,
@@ -433,14 +441,99 @@ ul.legal-list li {
   page-break-before: always;
 }
 
+.charge-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 6px;
+  font-size: 10pt;
+}
+
+.charge-table th {
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  padding: 4px 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.charge-table td {
+  padding: 6px 4px;
+  vertical-align: middle;
+  border-bottom: 1px dotted #999;
+}
+
+.charge-table .charge-num {
+  width: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.charge-table .charge-pc {
+  width: 22%;
+}
+
+.charge-table .charge-class {
+  width: 22%;
+}
+
+.charge-table .charge-remove {
+  width: 28px;
+  text-align: center;
+}
+
+.charge-table input,
+.charge-table select {
+  width: 100%;
+}
+
+.add-row-btn {
+  margin: 8px 0 14px;
+  border: 1px dashed #999;
+  border-radius: 4px;
+  padding: 6px 12px;
+  background: transparent;
+  font: inherit;
+  font-size: 10pt;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.remove-charge {
+  border: none;
+  background: transparent;
+  color: #888;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ruling-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  margin: 8px 0 12px;
+}
+
 @media print {
   body {
     background: #fff;
   }
 
   .toolbar,
-  .no-print {
+  .no-print,
+  .add-row-btn,
+  .remove-charge,
+  .charge-table .charge-remove {
     display: none !important;
+  }
+
+  .charge-table td {
+    border-bottom: 1px solid #ccc;
+  }
+
+  input::placeholder {
+    color: transparent;
   }
 
   .page {

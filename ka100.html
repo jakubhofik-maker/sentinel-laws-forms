@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KA-100 — Návrh na propuštění na kauci</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="toolbar no-print">
+    <a href="index.html">← Přehled formulářů</a>
+    <span>KA-100 Návrh na propuštění na kauci</span>
+    <button type="button" id="print-btn">Uložit jako PDF / Tisk</button>
+  </div>
+
+  <main class="page">
+    <div class="form-id">Formulář KA-100</div>
+
+    <header class="doc-header">
+      <div>
+        <h1 class="doc-title">Návrh na propuštění na kauci</h1>
+        <p class="doc-subtitle">Motion to Set Bail and Release from Custody</p>
+      </div>
+      <img class="logo" src="sentinel-laws-logo.png" alt="Sentinel Laws">
+    </header>
+
+    <p class="firm-line">Advokátní kancelář Sentinel Laws</p>
+
+    <div class="court-block">
+      <strong>Okresní soud státu San Andreas</strong>
+      <span>District Court, State of San Andreas — County of Los Santos</span>
+    </div>
+
+    <p class="section-title">I. Obviněná osoba</p>
+
+    <div class="field-row">
+      <label for="defendant-name">Celé jméno:</label>
+      <input type="text" id="defendant-name">
+    </div>
+    <div class="field-row">
+      <label for="defendant-dob">Datum narození:</label>
+      <input type="date" id="defendant-dob">
+    </div>
+    <div class="field-row">
+      <label for="defendant-address">Bydliště:</label>
+      <input type="text" id="defendant-address">
+    </div>
+    <div class="field-row">
+      <label for="custody-place">Místo zadržení:</label>
+      <input type="text" id="custody-place">
+    </div>
+    <div class="field-row">
+      <label for="case-number">Číslo spisu:</label>
+      <input type="text" id="case-number">
+    </div>
+
+    <p class="section-title">II. Zastoupení</p>
+
+    <div class="field-row">
+      <label for="petitioner-attorney">Zastoupen advokátem:</label>
+      <input type="text" id="petitioner-attorney" value="">
+    </div>
+
+    <p class="rep-note">
+      Tento návrh podává Advokátní kancelář Sentinel Laws, jednající prostřednictvím
+      advokáta <span id="attorney-rep-name">Leo Foster</span>, v zastoupení výše uvedené osoby.
+    </p>
+
+    <p class="section-title">III. Právní základ — Penal Code</p>
+
+    <p>
+      Navrhovatel žádá o stanovení kauce a propuštění obviněného podle právního řádu
+      státu San Andreas, zejména:
+    </p>
+    <div class="checkbox-row">
+      <label><input type="checkbox" id="pc-1271" checked> PC § 1271 — právo na kauci před odsouzením</label>
+      <label><input type="checkbox" id="pc-1275" checked> PC § 1275 — hlediska při stanovení výše kauce</label>
+      <label><input type="checkbox" id="pc-1268" checked> PC § 1268 — přijetí kauce</label>
+      <label><input type="checkbox" id="pc-1289"> PC § 1289 — úprava / snížení již stanovené kauce</label>
+    </div>
+    <p class="note">
+      Ustanovení vycházejí z obdoby kalifornského Penal Code (zejm. §§ 1268, 1271, 1275 a 1289)
+      a z práva na přiměřenou kauci.
+    </p>
+    <div class="field-row">
+      <label for="pc-other">Další ustanovení PC:</label>
+      <input type="text" id="pc-other">
+    </div>
+  </main>
+
+  <main class="page page-break">
+    <p class="section-title">IV. Obvinění vedená proti osobě</p>
+
+    <p>
+      Proti obviněnému jsou ke dni podání tohoto návrhu vedena následující obvinění:
+    </p>
+
+    <table class="charge-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ustanovení PC</th>
+          <th>Popis obvinění</th>
+          <th>Klasifikace</th>
+          <th class="no-print"></th>
+        </tr>
+      </thead>
+      <tbody id="charge-body"></tbody>
+    </table>
+    <button type="button" class="add-row-btn no-print" id="add-charge">+ Přidat obvinění</button>
+
+    <p class="section-title">V. Návrh na stanovení kauce</p>
+
+    <div class="field-row">
+      <label for="bail-amount">Navrhovaná výše kauce:</label>
+      <input type="text" id="bail-amount" value="$">
+    </div>
+    <div class="checkbox-row">
+      <label><input type="checkbox" id="bail-cash" checked> hotovostní kauce</label>
+      <label><input type="checkbox" id="bail-bond"> bail bond</label>
+      <label><input type="checkbox" id="bail-or"> propuštění na slib (OR)</label>
+    </div>
+
+    <p class="section-title">VI. Odůvodnění</p>
+
+    <p>Navrhovatel uvádí, že:</p>
+    <ul class="legal-list">
+      <li>
+        obviněný má vazby k okresu Los Santos a je ochoten dostavovat se k veškerým jednáním soudu;
+      </li>
+      <li>
+        stanovená kauce v navrhované výši je přiměřená povaze obvinění, nebezpečí pro veřejnost
+        i riziku útěku ve smyslu PC § 1275;
+      </li>
+      <li>
+        obviněný se zavazuje dodržovat podmínky propuštění uložené soudem.
+      </li>
+    </ul>
+    <div class="field-row wide">
+      <label for="bail-grounds">Další odůvodnění:</label>
+      <textarea id="bail-grounds"></textarea>
+    </div>
+
+    <p class="section-title center">VII. Žádost</p>
+
+    <p>
+      Z výše uvedených důvodů navrhovatel žádá, aby Okresní soud státu San Andreas
+      <strong>stanovil kauci</strong> a <strong>propustil obviněného z vazby / zadržení</strong>
+      za podmínek, které soud uzná za vhodné.
+    </p>
+
+    <div class="field-row">
+      <label for="sign-date">Datum podání:</label>
+      <input type="date" id="sign-date">
+    </div>
+    <div class="field-row">
+      <label for="sign-place">Místo:</label>
+      <input type="text" id="sign-place" value="Los Santos, San Andreas">
+    </div>
+
+    <p style="margin-top:18px;text-align:center;">
+      V <span id="place-display">Los Santos, San Andreas</span>, dne <span id="date-display">………………</span>
+    </p>
+
+    <div class="signature-grid">
+      <div class="signature-block">
+        <div class="signature-script" id="sig-defendant"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-defendant" style="text-align:center;border:none;">
+          <div>(Obviněný)</div>
+        </div>
+      </div>
+
+      <div class="signature-block">
+        <div class="signature-script" id="sig-attorney"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-attorney" value="" style="text-align:center;border:none;">
+          <div>Advokát — Sentinel Laws</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-row">
+      <img class="seal" src="court-seal.png" alt="Superior Court of San Andreas">
+
+      <div class="judge-block">
+        <div class="signature-script" id="sig-judge"></div>
+        <div>
+          Hon. Judge
+          <input type="text" id="judge-name" value="David Vance" class="inline-name">
+        </div>
+        <div>Presiding Judge, District Court</div>
+        <div class="ruling-row">
+          <label><input type="radio" name="ruling" value="granted"> vyhovuje se</label>
+          <label><input type="radio" name="ruling" value="denied"> zamítá se</label>
+          <label><input type="radio" name="ruling" value="modified"> vyhovuje se s úpravou</label>
+        </div>
+        <div>
+          Kauce stanovena na
+          <input type="text" id="bail-set" class="inline-field" value="$">
+        </div>
+        <div style="margin-top:8px;">V Los Santos dne <span id="court-date-display">………………</span></div>
+        <input type="date" id="court-date" class="no-print court-date-input">
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="portal.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      bindAllSignatures([
+        ['sig-name-defendant', 'sig-defendant'],
+        ['sig-name-attorney', 'sig-attorney'],
+        ['judge-name', 'sig-judge']
+      ]);
+
+      bindDateDisplay('sign-date', 'date-display');
+      bindDateDisplay('court-date', 'court-date-display');
+
+      const placeInput = document.getElementById('sign-place');
+      const placeDisplay = document.getElementById('place-display');
+      if (placeInput && placeDisplay) {
+        const syncPlace = () => { placeDisplay.textContent = placeInput.value || '………………'; };
+        placeInput.addEventListener('input', syncPlace);
+        syncPlace();
+      }
+
+      const defendantName = document.getElementById('defendant-name');
+      const sigNameDefendant = document.getElementById('sig-name-defendant');
+      if (defendantName && sigNameDefendant) {
+        defendantName.addEventListener('input', () => {
+          if (!sigNameDefendant.dataset.manual) {
+            sigNameDefendant.value = defendantName.value;
+            updateSignature(sigNameDefendant, 'sig-defendant');
+          }
+        });
+      }
+
+      if (sigNameDefendant) {
+        sigNameDefendant.addEventListener('input', () => {
+          sigNameDefendant.dataset.manual = sigNameDefendant.value ? '1' : '';
+        });
+      }
+
+      function updateAttorneyLabels() {
+        const attorney = getSelectedAttorney();
+        const rep = document.getElementById('attorney-rep-name');
+        if (rep) rep.textContent = attorney.name;
+      }
+
+      updateAttorneyLabels();
+      document.addEventListener('attorney-changed', updateAttorneyLabels);
+
+      const chargeBody = document.getElementById('charge-body');
+
+      function renumberCharges() {
+        [...chargeBody.querySelectorAll('.charge-row')].forEach((row, index) => {
+          row.querySelector('.charge-num').textContent = String(index + 1);
+        });
+      }
+
+      function addChargeRow() {
+        const row = document.createElement('tr');
+        row.className = 'charge-row';
+        row.innerHTML = `
+          <td class="charge-num"></td>
+          <td class="charge-pc"><input type="text" aria-label="Ustanovení PC" placeholder="např. PC 211"></td>
+          <td><input type="text" aria-label="Popis obvinění"></td>
+          <td class="charge-class">
+            <select aria-label="Klasifikace">
+              <option value="Felony">Felony</option>
+              <option value="Misdemeanor">Misdemeanor</option>
+              <option value="Infraction">Infraction</option>
+            </select>
+          </td>
+          <td class="charge-remove">
+            <button type="button" class="remove-charge no-print" aria-label="Odebrat obvinění">×</button>
+          </td>
+        `;
+        chargeBody.appendChild(row);
+        renumberCharges();
+      }
+
+      chargeBody.addEventListener('click', (event) => {
+        const button = event.target.closest('.remove-charge');
+        if (!button) return;
+        if (chargeBody.querySelectorAll('.charge-row').length <= 1) return;
+        button.closest('.charge-row').remove();
+        renumberCharges();
+      });
+
+      document.getElementById('add-charge').addEventListener('click', addChargeRow);
+      addChargeRow();
+    });
+  </script>
+</body>
+</html>
