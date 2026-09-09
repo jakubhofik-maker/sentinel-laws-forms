@@ -221,6 +221,112 @@ body.portal {
   font-size: 14px;
 }
 
+.authority-block {
+  margin-top: 8px;
+  margin-bottom: 36px;
+  padding: 18px 22px;
+  border: 1px solid var(--portal-border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.authority-toggle {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  margin: 0;
+  padding: 4px 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.authority-toggle:hover .authority-logo {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.45);
+}
+
+.authority-toggle[aria-expanded="true"] .authority-logo {
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.55);
+}
+
+.authority-toggle .category-chevron {
+  margin-left: auto;
+}
+
+.authority-toggle[aria-expanded="true"] .category-chevron {
+  transform: rotate(-135deg);
+  margin-top: 6px;
+}
+
+.authority-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.authority-logo {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: #0d0d0d;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.authority-panel {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--portal-border);
+}
+
+.authority-panel[hidden] {
+  display: none;
+}
+
+.authority-kicker {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--portal-gold);
+}
+
+.authority-copy h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--portal-gold-soft);
+}
+
+.authority-copy p:not(.authority-kicker) {
+  margin: 4px 0 0;
+  color: var(--portal-muted);
+  font-size: 13px;
+}
+
+.authority-empty {
+  margin: 0;
+  color: var(--portal-muted);
+  font-size: 14px;
+}
+
+.authority-block.coming-soon {
+  opacity: 0.72;
+}
+
+.authority-block .category-list {
+  gap: 10px;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PM-100 — Plná moc k zastupování</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="toolbar no-print">
+    <a href="index.html">← Přehled formulářů</a>
+    <span>PM-100 Plná moc k zastupování</span>
+    <button type="button" id="print-btn">Uložit jako PDF / Tisk</button>
+  </div>
+
+  <main class="page">
+    <div class="form-id">Formulář PM-100</div>
+
+    <header class="doc-header">
+      <div>
+        <h1 class="doc-title">Plná moc k zastupování</h1>
+        <p class="doc-subtitle">General Power of Attorney — Legal Representation</p>
+      </div>
+      <img class="logo" src="sentinel-laws-logo.png" alt="Sentinel Laws">
+    </header>
+
+    <p class="firm-line">Advokátní kancelář Sentinel Laws</p>
+
+    <div class="court-block">
+      <strong>Obecná plná moc</strong>
+      <span>State of San Andreas — County of Los Santos</span>
+    </div>
+
+    <p class="section-title">I. Zmocnitel (klient)</p>
+
+    <div class="field-row">
+      <label for="client-name">Celé jméno:</label>
+      <input type="text" id="client-name">
+    </div>
+    <div class="field-row">
+      <label for="client-dob">Datum narození:</label>
+      <input type="date" id="client-dob">
+    </div>
+    <div class="field-row">
+      <label for="client-address">Adresa / bydliště:</label>
+      <input type="text" id="client-address">
+    </div>
+    <div class="field-row">
+      <label for="client-phone">Telefon:</label>
+      <input type="text" id="client-phone">
+    </div>
+    <div class="field-row">
+      <label for="client-id">Číslo dokladu:</label>
+      <input type="text" id="client-id">
+    </div>
+
+    <p class="section-title">II. Zmocněnec (advokát)</p>
+
+    <div class="field-row">
+      <label for="petitioner-attorney">Zastoupen advokátem:</label>
+      <input type="text" id="petitioner-attorney" value="">
+    </div>
+    <div class="field-row">
+      <label for="firm-address">Sídlo kanceláře:</label>
+      <input type="text" id="firm-address" value="Los Santos, State of San Andreas">
+    </div>
+
+    <p class="rep-note">
+      Tuto plnou moc přijímá Advokátní kancelář Sentinel Laws, jednající prostřednictvím
+      advokáta <span id="attorney-rep-name">Leo Foster</span>.
+    </p>
+
+    <p class="section-title center">III. Udělení plné moci</p>
+
+    <p>
+      Já, výše uvedený/á zmocnitel/ka, tímto uděluji Advokátní kanceláři Sentinel Laws
+      a jmenovanému advokátovi <strong>obecnou plnou moc</strong> k mému zastupování
+      ve všech právních věcech, a to před soudy, orgány činnými v trestním řízení,
+      policií, Department of Justice i jakýmikoli jinými úřady státu San Andreas.
+    </p>
+    <p>
+      Zmocněnec je oprávněn jednat mým jménem v plném rozsahu, jako bych příslušné
+      úkony činil/a osobně.
+    </p>
+
+    <p class="section-title">IV. Právní základ</p>
+
+    <p>
+      Tato plná moc se uděluje v souladu s právním řádem státu San Andreas, zejména:
+    </p>
+    <ul class="legal-list">
+      <li>
+        <strong>Penal Code of the State of San Andreas</strong> — právo obviněného
+        na obhajobu a na zastoupení obhájcem v trestním řízení, včetně práva činit
+        úkony prostřednictvím zvoleného advokáta.
+      </li>
+      <li>
+        <strong>Code of Civil Procedure of the State of San Andreas</strong> —
+        oprávnění advokáta vystupovat před soudem, podávat návrhy a jednat jménem klienta.
+      </li>
+      <li>
+        <strong>Business and Professions Code of the State of San Andreas</strong> —
+        výkon advokacie a důvěrný vztah mezi advokátem a klientem.
+      </li>
+    </ul>
+
+    <p class="note">
+      Ustanovení vycházejí z obdoby kalifornské úpravy (zejm. Penal Code §§ 686 a 987,
+      Code of Civil Procedure § 283 a předpisů o plné moci).
+    </p>
+  </main>
+
+  <main class="page page-break">
+    <p class="section-title">V. Rozsah zastoupení</p>
+
+    <p>Zmocnitel výslovně souhlasí, aby zmocněnec zejména:</p>
+    <ul class="legal-list">
+      <li>
+        zastupoval zmocnitele ve věcech
+        <div class="checkbox-row">
+          <label><input type="checkbox" id="scope-criminal" checked> trestních</label>
+          <label><input type="checkbox" id="scope-civil" checked> civilních</label>
+          <label><input type="checkbox" id="scope-admin" checked> správních a policejních</label>
+          <label><input type="checkbox" id="scope-all" checked> ve všech ostatních právních věcech</label>
+        </div>
+      </li>
+      <li>
+        nahlížel do spisu, přijímal písemnosti, doručení a vyrozumění;
+      </li>
+      <li>
+        činil podání, návrhy, námitky, odvolání a jiná procesní podání;
+      </li>
+      <li>
+        jednal se soudem, státním zastupitelstvím, LSPD, DOJ a protistranou;
+      </li>
+      <li>
+        účastnil se jednání, výslechů a slyšení i bez osobní přítomnosti zmocnitele;
+      </li>
+      <li>
+        sjednával vyjádření, dohody a smírná řešení v rozsahu této plné moci.
+      </li>
+    </ul>
+
+    <div class="field-row wide">
+      <label for="matter-note">Případ / spis (nepovinné):</label>
+      <textarea id="matter-note"></textarea>
+    </div>
+
+    <p class="section-title center">VI. Souhlas a poučení</p>
+
+    <p>
+      Zmocnitel prohlašuje, že tuto plnou moc uděluje <strong>svobodně a vážně</strong>,
+      že byl poučen o rozsahu zastoupení a že s jednáním Advokátní kanceláře Sentinel Laws
+      a jmenovaného advokáta v tomto rozsahu <strong>výslovně souhlasí</strong>.
+    </p>
+    <p>
+      Zmocnitel bere na vědomí, že sdělení učiněná advokátovi podléhají důvěrnosti
+      vztahu advokát–klient podle právního řádu státu San Andreas.
+    </p>
+
+    <p class="section-title">VII. Platnost</p>
+
+    <ol class="legal-list">
+      <li>
+        Plná moc je platná dnem podpisu a trvá do písemného odvolání zmocnitelem
+        nebo do vzdání se zastoupení ze strany zmocněnce.
+      </li>
+      <li>
+        Zůstává v platnosti i v případě zadržení, vazby, hospitalizace nebo jiného
+        omezení osobní svobody zmocnitele, pokud ji zmocnitel výslovně neodvolá.
+      </li>
+      <li>
+        Zmocněnec je oprávněn plnou moc předložit kterémukoli soudu, úřadu nebo
+        osobě jako doklad svého oprávnění jednat.
+      </li>
+    </ol>
+
+    <p class="section-title center">VIII. Prohlášení pod hrozbou trestu za křivou přísahu</p>
+
+    <p>
+      Prohlašuji, že údaje v této listině jsou pravdivé a že jsem plnou moc udělil/a
+      po seznámení s jejím obsahem. Jsem si vědom/a následků nepravdivého prohlášení.
+    </p>
+
+    <div class="field-row">
+      <label for="sign-date">Datum podpisu:</label>
+      <input type="date" id="sign-date">
+    </div>
+    <div class="field-row">
+      <label for="sign-place">Místo:</label>
+      <input type="text" id="sign-place" value="Los Santos, San Andreas">
+    </div>
+
+    <p style="margin-top:18px;text-align:center;">
+      V <span id="place-display">Los Santos, San Andreas</span>, dne <span id="date-display">………………</span>
+    </p>
+
+    <div class="signature-grid">
+      <div class="signature-block">
+        <div class="signature-script" id="sig-client"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-client" style="text-align:center;border:none;">
+          <div>(Zmocnitel — klient)</div>
+        </div>
+      </div>
+
+      <div class="signature-block">
+        <div class="signature-script" id="sig-attorney"></div>
+        <div class="signature-line">
+          <input type="text" id="sig-name-attorney" value="" style="text-align:center;border:none;">
+          <div>Advokát — Sentinel Laws</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="portal.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      bindAllSignatures([
+        ['sig-name-client', 'sig-client'],
+        ['sig-name-attorney', 'sig-attorney']
+      ]);
+
+      bindDateDisplay('sign-date', 'date-display');
+
+      const placeInput = document.getElementById('sign-place');
+      const placeDisplay = document.getElementById('place-display');
+      if (placeInput && placeDisplay) {
+        const syncPlace = () => { placeDisplay.textContent = placeInput.value || '………………'; };
+        placeInput.addEventListener('input', syncPlace);
+        syncPlace();
+      }
+
+      const clientName = document.getElementById('client-name');
+      const sigNameClient = document.getElementById('sig-name-client');
+      if (clientName && sigNameClient) {
+        clientName.addEventListener('input', () => {
+          if (!sigNameClient.dataset.manual) {
+            sigNameClient.value = clientName.value;
+            updateSignature(sigNameClient, 'sig-client');
+          }
+        });
+      }
+
+      if (sigNameClient) {
+        sigNameClient.addEventListener('input', () => {
+          sigNameClient.dataset.manual = sigNameClient.value ? '1' : '';
+        });
+      }
+
+      function updateAttorneyLabels() {
+        const attorney = getSelectedAttorney();
+        const rep = document.getElementById('attorney-rep-name');
+        if (rep) rep.textContent = attorney.name;
+      }
+
+      updateAttorneyLabels();
+      document.addEventListener('attorney-changed', updateAttorneyLabels);
+    });
+  </script>
+</body>
+</html>

@@ -32,57 +32,100 @@
   </header>
 
   <main class="portal-main">
-    <div class="category-list">
-      <div class="category">
-        <button type="button" class="category-toggle" aria-expanded="false" aria-controls="category-name-change">
-          <span class="category-title">Změna jmen</span>
-          <span class="category-chevron" aria-hidden="true"></span>
-        </button>
-        <div class="category-panel" id="category-name-change" hidden>
-          <p>Formuláře pro podání žádosti o změnu jména u Okresního soudu státu San Andreas.</p>
-          <div class="form-grid">
-            <a class="form-card" href="nc100.html">
-              <span class="form-code">NC-100</span>
-              <strong>Petice o změnu jména</strong>
-              <span>Hlavní žádost podávaná u soudu. Obsahuje údaje navrhovatele, požadovanou změnu jména a podpisy.</span>
-            </a>
-
-            <a class="form-card" href="nc110.html">
-              <span class="form-code">NC-110</span>
-              <strong>Příloha — údaje o osobě</strong>
-              <span>Detailní informace o osobě, jejíž jméno se mění, včetně výpisu z trestního rejstříku.</span>
-            </a>
+    <section class="portal-section">
+      <div class="category-list">
+        <div class="category">
+          <button type="button" class="category-toggle" aria-expanded="false" aria-controls="category-poa">
+            <span class="category-title">Plná moc</span>
+            <span class="category-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="category-panel" id="category-poa" hidden>
+            <p>Obecná plná moc, kterou klient uděluje kanceláři Sentinel Laws oprávnění zastupovat jej ve všech právních věcech.</p>
+            <div class="form-grid">
+              <a class="form-card" href="pm100.html">
+                <span class="form-code">PM-100</span>
+                <strong>Plná moc k zastupování</strong>
+                <span>Klient souhlasí, aby advokát jednal jeho jménem před soudem, policií, DOJ i ostatními úřady.</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="category">
-        <button type="button" class="category-toggle" aria-expanded="false" aria-controls="category-divorce">
-          <span class="category-title">Rozvod</span>
-          <span class="category-chevron" aria-hidden="true"></span>
-        </button>
-        <div class="category-panel" id="category-divorce" hidden>
-          <p>Dohody o rozvodu manželství a vypořádání poměrů pro Okresní soud státu San Andreas.</p>
-          <div class="form-grid">
-            <a class="form-card" href="divorce.html">
-              <span class="form-code">ROZVOD</span>
-              <strong>Dohoda o rozvodu manželství</strong>
-              <span>Kompletní dohoda manželů včetně péče o děti, majetku, výživného a podpisů u soudu.</span>
-            </a>
+    <section class="authority-block">
+      <button type="button" class="authority-toggle" aria-expanded="false" aria-controls="authority-coj">
+        <img class="authority-logo" src="court-seal.png" alt="">
+        <div class="authority-copy">
+          <p class="authority-kicker">Podání u soudu</p>
+          <h2>Court of Justice</h2>
+          <p>Okresní soud státu San Andreas — County of Los Santos</p>
+        </div>
+        <span class="category-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="authority-panel" id="authority-coj" hidden>
+        <div class="category-list">
+          <div class="category">
+            <button type="button" class="category-toggle" aria-expanded="false" aria-controls="category-name-change">
+              <span class="category-title">Změna jmen</span>
+              <span class="category-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="category-panel" id="category-name-change" hidden>
+              <p>Formuláře pro podání žádosti o změnu jména u Okresního soudu státu San Andreas.</p>
+              <div class="form-grid">
+                <a class="form-card" href="nc100.html">
+                  <span class="form-code">NC-100</span>
+                  <strong>Petice o změnu jména</strong>
+                  <span>Hlavní žádost podávaná u soudu. Obsahuje údaje navrhovatele, požadovanou změnu jména a podpisy.</span>
+                </a>
+
+                <a class="form-card" href="nc110.html">
+                  <span class="form-code">NC-110</span>
+                  <strong>Příloha — údaje o osobě</strong>
+                  <span>Detailní informace o osobě, jejíž jméno se mění, včetně výpisu z trestního rejstříku.</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="category">
+            <button type="button" class="category-toggle" aria-expanded="false" aria-controls="category-divorce">
+              <span class="category-title">Rozvod</span>
+              <span class="category-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="category-panel" id="category-divorce" hidden>
+              <p>Dohody o rozvodu manželství a vypořádání poměrů pro Okresní soud státu San Andreas.</p>
+              <div class="form-grid">
+                <a class="form-card" href="divorce.html">
+                  <span class="form-code">ROZVOD</span>
+                  <strong>Dohoda o rozvodu manželství</strong>
+                  <span>Kompletní dohoda manželů včetně péče o děti, majetku, výživného a podpisů u soudu.</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="category disabled">
-        <button type="button" class="category-toggle" disabled aria-expanded="false">
-          <span class="category-title">Department of Justice</span>
-          <span class="coming-soon-badge">Brzy</span>
-        </button>
+    <section class="authority-block coming-soon">
+      <button type="button" class="authority-toggle" aria-expanded="false" aria-controls="authority-doj">
+        <img class="authority-logo" src="doj-logo.png" alt="">
+        <div class="authority-copy">
+          <p class="authority-kicker">Podání u úřadu</p>
+          <h2>Department of Justice <span class="coming-soon-badge">Brzy</span></h2>
+          <p>Office of the Attorney General — State of San Andreas</p>
+        </div>
+        <span class="category-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="authority-panel" id="authority-doj" hidden>
+        <p class="authority-empty">Formuláře podávané u Department of Justice budou doplněny.</p>
       </div>
-    </div>
+    </section>
   </main>
+
   <footer class="portal-footer">
-    Sentinel Laws · Court of Justice · State of San Andreas
+    Sentinel Laws · Court of Justice · Department of Justice
   </footer>
 
   <script src="portal.js"></script>

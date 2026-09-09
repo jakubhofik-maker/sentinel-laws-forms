@@ -70,8 +70,8 @@ function initFormAttorneySync() {
   document.addEventListener('attorney-changed', applyAttorneyToForm);
 }
 
-function initCategoryToggles() {
-  document.querySelectorAll('.category-toggle:not(:disabled)').forEach((button) => {
+function initDisclosureToggles(selector) {
+  document.querySelectorAll(`${selector}:not(:disabled)`).forEach((button) => {
     const panelId = button.getAttribute('aria-controls');
     const panel = panelId ? document.getElementById(panelId) : null;
     if (!panel) return;
@@ -87,5 +87,6 @@ function initCategoryToggles() {
 document.addEventListener('DOMContentLoaded', () => {
   initPortalAttorneySelector();
   initFormAttorneySync();
-  initCategoryToggles();
+  initDisclosureToggles('.authority-toggle');
+  initDisclosureToggles('.category-toggle');
 });
